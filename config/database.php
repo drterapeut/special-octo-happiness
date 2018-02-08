@@ -45,7 +45,7 @@ return [
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'sentence_laravel'),
             'username' => env('DB_USERNAME', 'sentence_laravel'),
-            'password' => env('DB_PASSWORD', 'Anci2511'),
+            'password' => env('DB_PASSWORD', 'Anci2511*'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
