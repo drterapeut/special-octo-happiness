@@ -78,6 +78,7 @@
             @endif
 
             <div class="content">
+                <example-component></example-component>
                 <div class="title m-b-md">
                     Larakenjs
                 </div>
@@ -92,4 +93,5 @@
             </div>
         </div>
     </body>
+    <script src="{{ asset('js/app.js') }}"></script>
 </html>
