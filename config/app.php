@@ -104,7 +104,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => 'base64:nz5JlkepWiVKcsQjF0mdUkwGiWAN8IhTvN/+S5b+o/0=',
 
     'cipher' => 'AES-256-CBC',
 
@@ -121,7 +121,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => 'errorlog',
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
