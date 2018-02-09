@@ -8,7 +8,6 @@
                 <div class="card-header">Login</div>
 
                 <div class="card-body">
-                    <example-component></example-component>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
