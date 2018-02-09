@@ -5,7 +5,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-                <example-component></example-component>
                 <div class="card-header">Register</div>
 
                 <div class="card-body">
