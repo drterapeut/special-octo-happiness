@@ -78,9 +78,8 @@
             @endif
 
             <div class="content">
-                <example-component></example-component>
                 <div class="title m-b-md">
-                    Larakenjs
+                    Laravel
                 </div>
 
                 <div class="links">
@@ -93,5 +92,4 @@
             </div>
         </div>
     </body>
-    <script src="{{ asset('js/app.js') }}"></script>
 </html>
