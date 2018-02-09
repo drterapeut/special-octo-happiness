@@ -10,7 +10,6 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "babel-preset-stage-2": "^6.24.1",
         "axios": "^0.17",
         "bootstrap": "^4.0.0",
         "popper.js": "^1.12",
