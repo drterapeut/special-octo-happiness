@@ -173,7 +173,7 @@
     <div id="wrapper">
 
         <div class="content">
-
+            @yield('content')
         </div>
 
         <!-- Right sidebar -->
