@@ -43191,6 +43191,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -43213,84 +43227,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box box-success" }, [
+    return _c("div", { staticClass: "col-lg-12" }, [
       _c(
         "div",
-        {
-          staticClass: "box-header ui-sortable-handle",
-          staticStyle: { cursor: "move" }
-        },
+        { staticClass: "box box-success direct-chat direct-chat-success" },
         [
-          _c("i", { staticClass: "fa fa-comments-o" }),
-          _vm._v(" "),
-          _c("h3", { staticClass: "box-title" }, [_vm._v("Chat")]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "box-tools pull-right",
-              attrs: {
-                "data-toggle": "tooltip",
-                title: "",
-                "data-original-title": "Status"
-              }
-            },
-            [
+          _c("div", { staticClass: "box-header with-border" }, [
+            _c("h3", { staticClass: "box-title" }, [_vm._v("Direct Chat")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "box-tools pull-right" }, [
               _c(
-                "div",
+                "button",
                 {
-                  staticClass: "btn-group",
-                  attrs: { "data-toggle": "btn-toggle" }
+                  staticClass: "btn btn-box-tool",
+                  attrs: { type: "button", "data-widget": "collapse" }
                 },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-default btn-sm active",
-                      attrs: { type: "button" }
-                    },
-                    [_c("i", { staticClass: "fa fa-square text-green" })]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-default btn-sm",
-                      attrs: { type: "button" }
-                    },
-                    [_c("i", { staticClass: "fa fa-square text-red" })]
-                  )
-                ]
+                [_c("i", { staticClass: "fa fa-minus" })]
               )
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "slimScrollDiv",
-          staticStyle: {
-            position: "relative",
-            overflow: "hidden",
-            width: "auto",
-            height: "250px"
-          }
-        },
-        [
-          _c(
-            "div",
-            {
-              staticClass: "box-body chat",
-              staticStyle: {
-                overflow: "hidden",
-                width: "auto",
-                height: "250px"
-              },
-              attrs: { id: "chat-box" }
-            },
-            [
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "box-body" }, [
+            _c("div", { staticClass: "direct-chat-messages" }, [
               _c("div", { staticClass: "direct-chat-msg" }, [
                 _c("div", { staticClass: "direct-chat-info clearfix" }, [
                   _c("span", { staticClass: "direct-chat-name pull-left" }, [
@@ -43340,57 +43298,36 @@ var staticRenderFns = [
                   )
                 ])
               ])
-            ]
-          ),
-          _c("div", {
-            staticClass: "slimScrollBar",
-            staticStyle: {
-              background: "rgb(0, 0, 0)",
-              width: "7px",
-              position: "absolute",
-              top: "0px",
-              opacity: "0.4",
-              display: "none",
-              "border-radius": "7px",
-              "z-index": "99",
-              right: "1px",
-              height: "184.911px"
-            }
-          }),
-          _c("div", {
-            staticClass: "slimScrollRail",
-            staticStyle: {
-              width: "7px",
-              height: "100%",
-              position: "absolute",
-              top: "0px",
-              display: "none",
-              "border-radius": "7px",
-              background: "rgb(51, 51, 51)",
-              opacity: "0.2",
-              "z-index": "90",
-              right: "1px"
-            }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "box-footer" }, [
-        _c("div", { staticClass: "input-group" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { placeholder: "Type message..." }
-          }),
+            ])
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "input-group-btn" }, [
-            _c(
-              "button",
-              { staticClass: "btn btn-success", attrs: { type: "button" } },
-              [_c("i", { staticClass: "fa fa-plus" })]
-            )
+          _c("div", { staticClass: "box-footer" }, [
+            _c("form", { attrs: { action: "#", method: "post" } }, [
+              _c("div", { staticClass: "input-group" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    name: "message",
+                    placeholder: "Type Message ..."
+                  }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "input-group-btn" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success btn-flat",
+                      attrs: { type: "button" }
+                    },
+                    [_vm._v("Send")]
+                  )
+                ])
+              ])
+            ])
           ])
-        ])
-      ])
+        ]
+      )
     ])
   }
 ]
