@@ -43166,6 +43166,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -43254,11 +43279,69 @@ var staticRenderFns = [
           }
         },
         [
-          _c("div", {
-            staticClass: "box-body chat",
-            staticStyle: { overflow: "hidden", width: "auto", height: "250px" },
-            attrs: { id: "chat-box" }
-          }),
+          _c(
+            "div",
+            {
+              staticClass: "box-body chat",
+              staticStyle: {
+                overflow: "hidden",
+                width: "auto",
+                height: "250px"
+              },
+              attrs: { id: "chat-box" }
+            },
+            [
+              _c("div", { staticClass: "direct-chat-msg" }, [
+                _c("div", { staticClass: "direct-chat-info clearfix" }, [
+                  _c("span", { staticClass: "direct-chat-name pull-left" }, [
+                    _vm._v("Alexander Pierce")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "direct-chat-timestamp pull-right" },
+                    [_vm._v("23 Jan 2:00 pm")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "direct-chat-img",
+                  attrs: { src: "/img/avatar.jpeg", alt: "message user image" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "direct-chat-text" }, [
+                  _vm._v(
+                    "\n                    Is this template really for free? That's unbelievable!\n                  "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "direct-chat-msg right" }, [
+                _c("div", { staticClass: "direct-chat-info clearfix" }, [
+                  _c("span", { staticClass: "direct-chat-name pull-right" }, [
+                    _vm._v("Sarah Bullock")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "direct-chat-timestamp pull-left" },
+                    [_vm._v("23 Jan 2:05 pm")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "direct-chat-img",
+                  attrs: { src: "/img/avatar.jpeg", alt: "message user image" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "direct-chat-text" }, [
+                  _vm._v(
+                    "\n                    You better believe it!\n                  "
+                  )
+                ])
+              ])
+            ]
+          ),
           _c("div", {
             staticClass: "slimScrollBar",
             staticStyle: {
