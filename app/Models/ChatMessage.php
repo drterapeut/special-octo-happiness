@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
+use App\User;
 
 class ChatMessage extends Model
 {
-    protected $table = 'posts';
+    protected $table = 'chat_messages';
 
     public function user()
     {

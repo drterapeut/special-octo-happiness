@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::namespace('Api')->group(function () {
+
+    Route::group(['prefix' => '/chat_messages'], function () {
+        Route::get('/', 'ChatMessageController@index');
+        Route::post('/', 'ChatMessageController@store');
+    });
+
+});

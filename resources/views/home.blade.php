@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<example-component></example-component>
+<chat></chat>
 @endsection

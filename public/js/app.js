@@ -968,8 +968,12 @@ module.exports = __webpack_require__(42);
 
 /***/ }),
 /* 10 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Chat__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Chat___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Chat__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -987,10 +991,13 @@ window.Vue = __webpack_require__(35);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', __webpack_require__(38));
+
 
 var app = new Vue({
-  el: '.content'
+  el: '.content',
+  components: {
+    Chat: __WEBPACK_IMPORTED_MODULE_0__components_Chat___default.a
+  }
 });
 
 /***/ }),
@@ -42972,53 +42979,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(4)))
 
 /***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(39)
-/* script */
-var __vue_script__ = __webpack_require__(40)
-/* template */
-var __vue_template__ = __webpack_require__(41)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7168fb6a", Component.options)
-  } else {
-    hotAPI.reload("data-v-7168fb6a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 38 */,
 /* 39 */
 /***/ (function(module, exports) {
 
@@ -43128,7 +43089,66 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 40 */
+/* 40 */,
+/* 41 */,
+/* 42 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(39)
+/* script */
+var __vue_script__ = __webpack_require__(48)
+/* template */
+var __vue_template__ = __webpack_require__(49)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Chat.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3f23c80f", Component.options)
+  } else {
+    hotAPI.reload("data-v-3f23c80f", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43178,156 +43198,180 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            new_message: '',
+            messages: []
+        };
+    },
+
+    methods: {
+        sendMessage: function sendMessage() {
+            var data = {
+                message: this.new_message
+            };
+            axios.post('/api/chat_messages', data).then(function (response) {
+                console.log(response.data);
+            }).catch(function (error) {
+                if (error) {
+                    console.log(error.response);
+                }
+            });
+        }
+    },
     mounted: function mounted() {
-        console.log('Component mounted.');
+        var _this = this;
+
+        axios.get('/api/chat_messages').then(function (response) {
+            _this.messages = response.data;
+            console.log(response.data);
+        }).catch(function (error) {
+            if (error) {
+                console.log(error.response);
+            }
+        });
     }
 });
 
 /***/ }),
-/* 41 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "col-lg-12" }, [
+    _c(
+      "div",
+      { staticClass: "box box-success direct-chat direct-chat-success" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "box-body" }, [
+          _c(
+            "div",
+            { staticClass: "direct-chat-messages" },
+            _vm._l(_vm.messages, function(message, index) {
+              return _c(
+                "div",
+                { class: "direct-chat-msg " + (index % 2 != 0 ? "right" : "") },
+                [
+                  _c("div", { staticClass: "direct-chat-info clearfix" }, [
+                    _c(
+                      "span",
+                      {
+                        class:
+                          "direct-chat-name pull-" +
+                          (index % 2 == 0 ? "left" : "right")
+                      },
+                      [_vm._v(_vm._s(message.user.name))]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        class:
+                          "direct-chat-timestamp pull-" +
+                          (index % 2 == 0 ? "right" : "left")
+                      },
+                      [_vm._v(_vm._s(message.created_at))]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "direct-chat-img",
+                    attrs: {
+                      src: "/img/avatar.jpeg",
+                      alt: "message user image"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "direct-chat-text" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(message.message) +
+                        "\n                    "
+                    )
+                  ])
+                ]
+              )
+            })
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "box-footer" }, [
+          _c("form", { attrs: { action: "#", method: "post" } }, [
+            _c("div", { staticClass: "input-group" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.new_message,
+                    expression: "new_message"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  name: "message",
+                  placeholder: "Type Message ..."
+                },
+                domProps: { value: _vm.new_message },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.new_message = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "input-group-btn" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success btn-flat",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        _vm.sendMessage($event)
+                      }
+                    }
+                  },
+                  [_vm._v("Send")]
+                )
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-12" }, [
-      _c(
-        "div",
-        { staticClass: "box box-success direct-chat direct-chat-success" },
-        [
-          _c("div", { staticClass: "box-header with-border" }, [
-            _c("h3", { staticClass: "box-title" }, [_vm._v("Direct Chat")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "box-tools pull-right" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-box-tool",
-                  attrs: { type: "button", "data-widget": "collapse" }
-                },
-                [_c("i", { staticClass: "fa fa-minus" })]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "box-body" }, [
-            _c("div", { staticClass: "direct-chat-messages" }, [
-              _c("div", { staticClass: "direct-chat-msg" }, [
-                _c("div", { staticClass: "direct-chat-info clearfix" }, [
-                  _c("span", { staticClass: "direct-chat-name pull-left" }, [
-                    _vm._v("Alexander Pierce")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    { staticClass: "direct-chat-timestamp pull-right" },
-                    [_vm._v("23 Jan 2:00 pm")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "direct-chat-img",
-                  attrs: { src: "/img/avatar.jpeg", alt: "message user image" }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "direct-chat-text" }, [
-                  _vm._v(
-                    "\n                    Is this template really for free? That's unbelievable!\n                  "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "direct-chat-msg right" }, [
-                _c("div", { staticClass: "direct-chat-info clearfix" }, [
-                  _c("span", { staticClass: "direct-chat-name pull-right" }, [
-                    _vm._v("Sarah Bullock")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    { staticClass: "direct-chat-timestamp pull-left" },
-                    [_vm._v("23 Jan 2:05 pm")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "direct-chat-img",
-                  attrs: { src: "/img/avatar.jpeg", alt: "message user image" }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "direct-chat-text" }, [
-                  _vm._v(
-                    "\n                    You better believe it!\n                  "
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "box-footer" }, [
-            _c("form", { attrs: { action: "#", method: "post" } }, [
-              _c("div", { staticClass: "input-group" }, [
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    name: "message",
-                    placeholder: "Type Message ..."
-                  }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "input-group-btn" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success btn-flat",
-                      attrs: { type: "button" }
-                    },
-                    [_vm._v("Send")]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ]
-      )
+    return _c("div", { staticClass: "box-header with-border" }, [
+      _c("h3", { staticClass: "box-title" }, [_vm._v("Direct Chat")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "box-tools pull-right" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-box-tool",
+            attrs: { type: "button", "data-widget": "collapse" }
+          },
+          [_c("i", { staticClass: "fa fa-minus" })]
+        )
+      ])
     ])
   }
 ]
@@ -43336,15 +43380,9 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-3f23c80f", module.exports)
   }
 }
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
